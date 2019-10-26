@@ -7,7 +7,7 @@ exit /b
 
 
 :continue
-goto %1
+if NOT "%1"=="" goto %1
 
 cd %~dp0
 powershell Set-ExecutionPolicy bypass -force
