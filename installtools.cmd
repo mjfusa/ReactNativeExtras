@@ -22,8 +22,8 @@ choco install windows-sdk-10-version-1809-all -y
 :installvs
 choco install visualstudio2019community --package-parameters "--allWorkloads --includeRecommended --includeOptional --passive --locale en-US"
 
-:installrn
-choco install nodejs -y
+:installnode
+choco install nodejs.install --version=12.9.1 -y
 choco install yarn -y
 "%ProgramFiles(x86)%\Yarn\bin\yarn" add global react-native-cli
 
