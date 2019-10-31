@@ -27,10 +27,10 @@ choco install nodejs.install --version=12.9.1 -y
 choco install yarn -y
 "%ProgramFiles(x86)%\Yarn\bin\yarn" add global react-native-cli
 
-goto end
+:installrn
+npm install -g react-native-cli
 
-rem cmd /c PowerShell [Environment]::SetEnvironmentVariable('VCTargetsPath', 'C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140', 'User')
-rem SET VCTargetsPath=C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140
+goto end
 
 :end
 choco feature disable -n=allowGlobalConfirmation
