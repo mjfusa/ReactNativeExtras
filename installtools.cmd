@@ -25,10 +25,9 @@ choco install visualstudio2019community --package-parameters "--allWorkloads --i
 :installnode
 choco install nodejs.install --version=12.9.1 -y
 choco install yarn -y
-"%ProgramFiles(x86)%\Yarn\bin\yarn" add global react-native-cli
 
 :installrn
-npm install -g react-native-cli
+"%ProgramFiles(x86)%\Yarn\bin\yarn" add global react-native-cli
 
 goto end
 
