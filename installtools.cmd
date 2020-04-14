@@ -20,7 +20,7 @@ for %%a in (git.install, netfx-4.6.1-devpack) do choco install %%a -y
 choco install windows-sdk-10-version-1809-all -y
 
 :installvs
-choco install visualstudio2019community --package-parameters "--allWorkloads --includeRecommended --includeOptional --passive --locale en-US"
+REM choco install visualstudio2019community --package-parameters "--allWorkloads --includeRecommended --includeOptional --passive --locale en-US"
 
 :installnode
 choco install nodejs.install --version=12.9.1 -y
