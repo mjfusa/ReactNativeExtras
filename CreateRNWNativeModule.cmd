@@ -9,6 +9,13 @@ cmd /c npx create-react-native-module %1
 cd react-native-%1
 cmd /c yarn add react-native@%RN_VERSION_INIT% --dev
 cmd /c yarn add react-native-windows@%RN_VERSION_INIT% --peer
+
+:expandtemplate
+md windows
+cd windows
+powershell Expand-Archive C:\P\reactnativeextras\ReactNativeExtras\NativeModuleTemplateCPP.zip -DestinationPath .\NativeModule
+
+
 goto end
 
 :error
