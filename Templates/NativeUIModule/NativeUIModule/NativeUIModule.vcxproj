@@ -6,9 +6,9 @@
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <CppWinRTGenerateWindowsMetadata>true</CppWinRTGenerateWindowsMetadata>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{7a94d9c0-8f00-48ab-a867-0a05a3fbbfce}</ProjectGuid>
-    <ProjectName>NativeModule</ProjectName>
-    <RootNamespace>NativeModule</RootNamespace>
+    <ProjectGuid>{66B4B8CC-C2BE-4D93-88BB-F4941599B15B}</ProjectGuid>
+    <ProjectName>NativeUIModule</ProjectName>
+    <RootNamespace>NativeUIModule</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>
@@ -73,7 +73,7 @@
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="Shared">
-    <Import Project="..\..\..\..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
+    <Import Project="..\..\..\node_modules\react-native-windows\Microsoft.ReactNative.Cxx\Microsoft.ReactNative.Cxx.vcxitems" Label="Shared" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -100,7 +100,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
-      <ModuleDefinitionFile>NativeModule.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>NativeUIModule.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
@@ -118,24 +118,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="NativeModuleClass.h" />
+    <ClInclude Include="CustomUserControl.h">
+      <DependentUpon>CustomUserControl.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReactPackageProvider.h">
       <DependentUpon>ReactPackageProvider.idl</DependentUpon>
     </ClInclude>
+    <ClInclude Include="rn_macros.h" />
+    <ClInclude Include="UserControlViewManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CustomUserControl.cpp">
+      <DependentUpon>CustomUserControl.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="Generated Files\module.g.cpp" />
-    <ClCompile Include="NativeModuleClass.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ReactPackageProvider.cpp">
       <DependentUpon>ReactPackageProvider.idl</DependentUpon>
     </ClCompile>
+    <ClCompile Include="UserControlViewManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NativeModule.def" />
+    <None Include="NativeUIModule.def" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -145,13 +152,18 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\node_modules\react-native-windows\Microsoft.ReactNative\Microsoft.ReactNative.vcxproj">
-      <Project>{f7d32bd0-2749-483e-9a0d-1635ef7e3136}</Project>
-      <Private>false</Private>
-    </ProjectReference>
+    <Midl Include="CustomUserControl.idl">
+      <DependentUpon>CustomUserControl.xaml</DependentUpon>
+    </Midl>
+    <Midl Include="ReactPackageProvider.idl" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="ReactPackageProvider.idl" />
+    <Page Include="CustomUserControl.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\node_modules\react-native-windows\Microsoft.ReactNative\Microsoft.ReactNative.vcxproj">
+      <Project>{f7d32bd0-2749-483e-9a0d-1635ef7e3136}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
