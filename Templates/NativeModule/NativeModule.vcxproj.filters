@@ -11,16 +11,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Class.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="NativeModuleClass.cpp" />
-    <ClCompile Include="Generated Files\module.g.cpp" />
+    <ClCompile Include="ReactPackageProvider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="NativeModuleClass.h" />
+    <ClInclude Include="ReactPackageProvider.h" />
+    <ClInclude Include="rn_macros.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="NativeModule.def" />
     <None Include="packages.config" />
+    <None Include="NativeModule_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />
