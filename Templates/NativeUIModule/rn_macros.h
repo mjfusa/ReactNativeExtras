@@ -2,8 +2,8 @@
 
 #define QUOTEME(M)       #M
 #define INCLUDE_FILE(M)  QUOTEME(M##.h)
-#define INCLUDE_FILE_X(X) STRINGIFY2(X)    
 #define STRINGIFY2(X) #X
+#define INCLUDE_FILE_X(X) STRINGIFY2(X)    
 
 #define STR_VALUE(arg)      L###arg
 #define CLASS_NAME(name) STR_VALUE(name)

@@ -11,7 +11,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="Generated Files\module.g.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="UserControlViewManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -20,17 +20,18 @@
     <ClInclude Include="UserControlViewManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Midl Include="ReactPackageProvider.idl" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="NativeUIModule.def" />
+    <None Include="NativeModule_TemporaryKey.pfx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Midl Include="ReactPackageProvider.idl" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="CustomUserControl.xaml" />
