@@ -49,6 +49,6 @@ Create React Native for Windows main app with **CreateRNWNativeModule.cmd**
 
   ```Add Existing Project: .\node_modules\react-native-mynativemodule\windows\NativeModule\NativeModule.vcxproj```
   
-## Smaple:
+## Sample:
 See here to see the results: https://github.com/mjfusa/react-native-windows-module-sample
 
