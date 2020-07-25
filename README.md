@@ -18,3 +18,28 @@ Batch files to help with getting started with React Native for Windows
 |--|--|
 |**createRelatedSetBundle.cmd**|Convert msix to msixbundle adding bundle manifest|
 |**InstallApp.ps1**|Installs app|
+
+### Usage RNWNativeModule.cmd
+1. Create native module with **CreateRNWNativeModule.cmd**
+
+  ```CreateRNWNativeModule mynativemodule```
+  Note: Output is in folder .\react-native-mynativemodule
+  
+2. Build native module using Visual Studio
+
+  ```Open .\react-native-mynativemodule\windows\NativeModule\NativeModule.sln```
+  
+3. After native module is built, change to main app directory
+
+  ```cd \MyMainApp```
+  
+4. Install native module in to main app source tree with **InstallNativemodule.cmd** C:\path to native module
+
+  ```InstallNativeModule c:\react-native-mynativemodule```
+  
+  Note: Output is in folder *MyMainAp\node_modules\react-native-mynativemodule*
+  
+5. Open Main App Project and add Native Module Project to solution
+
+  ```Add Existing Project: .\node_modules\react-native-mynativemodule\windows\NativeModule\NativeModule.vcxproj```
+
