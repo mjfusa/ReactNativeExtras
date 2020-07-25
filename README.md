@@ -1,6 +1,6 @@
 # React Native Extras
 
-Batch files to help with getting started with React Native for Windows
+Batch files to help with getting started with React Native for Windows. Derived from the React Native for Windows documentation: https://microsoft.github.io/react-native-windows/docs/getting-started
 
 ### Windows Native Modules
 
@@ -19,7 +19,13 @@ Batch files to help with getting started with React Native for Windows
 |**createRelatedSetBundle.cmd**|Convert msix to msixbundle adding bundle manifest|
 |**InstallApp.ps1**|Installs app|
 
-### Usage RNWNativeModule.cmd
+### Usage: CreateRNWProject.cmd
+Create React Native for Windows main app with **CreateRNWNativeModule.cmd**
+
+  ```CreateRNWProject MyMainApp```
+  Note: Output is in folder .\MyMainApp
+  
+### Usage: RNWNativeModule.cmd
 1. Create native module with **CreateRNWNativeModule.cmd**
 
   ```CreateRNWNativeModule mynativemodule```
@@ -42,4 +48,7 @@ Batch files to help with getting started with React Native for Windows
 5. Open Main App Project and add Native Module Project to solution
 
   ```Add Existing Project: .\node_modules\react-native-mynativemodule\windows\NativeModule\NativeModule.vcxproj```
+  
+## Smaple:
+See here to see the results: https://github.com/mjfusa/react-native-windows-module-sample
 
