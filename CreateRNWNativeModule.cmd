@@ -1,6 +1,6 @@
 if "%1"=="" goto error
-if "%RN_VERSION%"=="" set RN_VERSION=^^0.62.5
-if "%RN_VERSION_INIT%"=="" set RN_VERSION_INIT=^^0.62
+set RN_VERSION=^^0.63.0
+set RN_VERSION_INIT=^^0.63
 :start
 cmd /c yarn global add create-react-native-module
 cmd /c npx create-react-native-module %1
