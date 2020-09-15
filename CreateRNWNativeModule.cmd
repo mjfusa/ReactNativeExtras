@@ -13,8 +13,8 @@ cmd /c yarn add react-native-windows@%RN_VERSION_INIT% --peer
 :expandtemplate
 md windows
 cd windows
-powershell Expand-Archive C:\P\reactnativeextras\ReactNativeExtras\Templates\NativeModule\NativeModule.zip
-powershell Expand-Archive C:\P\reactnativeextras\ReactNativeExtras\Templates\NativeUIModule\NativeUIModule.zip
+powershell Expand-Archive %~dp0\Templates\NativeModule\NativeModule.zip
+powershell Expand-Archive %~dp0\Templates\NativeUIModule\NativeUIModule.zip
 goto end
 
 :error
