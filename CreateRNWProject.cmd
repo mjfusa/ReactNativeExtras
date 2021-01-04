@@ -1,7 +1,7 @@
 rem ^0.61.9 == Latest
 rem ^0.60.0 == Stable
 if "%1"=="" goto error
-set RN_VERSION=^^0.63
+set RN_VERSION=^^0.63.2
 if "%1"=="" goto error
 :start
 cmd /c npx --ignore-existing react-native init %1 --version ^^%RN_VERSION%

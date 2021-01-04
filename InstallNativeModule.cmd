@@ -1,6 +1,7 @@
 if "%1"=="" goto error
 
-npm i %1 --save
+rem npm i %1 --save
+yarn add %1
 goto end
 
 :error
